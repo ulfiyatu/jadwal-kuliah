@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jadwal Kuliah & To-Do List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-6">
+  <div class="max-w-5xl mx-auto">
+    <header class="mb-8">
+      <h1 class="text-4xl font-semibold text-pink-900 mb-2">Jadwal Kuliah & To-Do List</h1>
+      <p class="text-gray-600"> <b>Hai Ulfiyatu!</b> ini adalah jadwal kuliah kamu untuk semester 2 <br> Kamu juga bisa menambahkan to do list supaya tugas tugasmu terkontrol </p>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-1 gap-30">
+      <!-- Jadwal Kuliah Section -->
+      <section class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-700 flex items-center">
+          <i class="fas fa-calendar-alt mr-2 text-pink-600"></i> Jadwal Kuliah
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border border-gray-200 rounded-lg">
+            <thead class="bg-pink-100 text-pink-800">
+              <tr>
+                <th class="py-3 px-4 text-left border-b border-pink-200">Mata Kuliah</th>
+                <th class="py-3 px-4 text-left border-b border-pink-200">Ruangan</th>
+                <th class="py-3 px-4 text-left border-b border-pink-200">Dosen</th>
+                <th class="py-3 px-4 text-left border-b border-pink-200">Waktu</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body" class="text-gray-700">
+              <!-- Sample data -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Dasar Pemasaran</td>
+                <td class="py-2 px-4 border-b border-gray-200">K258</td>
+                <td class="py-2 px-4 border-b border-gray-200">Ibnu Cahyo Ramadhan</td>
+                <td class="py-2 px-4 border-b border-gray-200">Senin, 09:30 - 11:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Matematika Ekonomi 2 **</td>
+                <td class="py-2 px-4 border-b border-gray-200">K256</td>
+                <td class="py-2 px-4 border-b border-gray-200">Haryono Putro</td>
+                <td class="py-2 px-4 border-b border-gray-200">Senin, 11:30 - 14:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Digital Citizenship</td>
+                <td class="py-2 px-4 border-b border-gray-200">UGTV (VCLASS)</td>
+                <td class="py-2 px-4 border-b border-gray-200">Team Teaching</td>
+                <td class="py-2 px-4 border-b border-gray-200">Selasa, 14:30 - 17:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Praktikum Digital Citizenship</td>
+                <td class="py-2 px-4 border-b border-gray-200">VCLASS</td>
+                <td class="py-2 px-4 border-b border-gray-200">Team Dosen</td>
+                <td class="py-2 px-4 border-b border-gray-200">Selasa, 07:30 - 09:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Pengantar Komputer & TI 2B</td>
+                <td class="py-2 px-4 border-b border-gray-200">K292</td>
+                <td class="py-2 px-4 border-b border-gray-200">Puji Sularsih</td>
+                <td class="py-2 px-4 border-b border-gray-200">Rabu, 07:30 - 09:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Pengantar Komputer & TI 2A</td>
+                <td class="py-2 px-4 border-b border-gray-200">K252</td>
+                <td class="py-2 px-4 border-b border-gray-200">Lira Arum Kusumaningthyashuta</td>
+                <td class="py-2 px-4 border-b border-gray-200">Rabu, 09:30 - 11:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Pengantar Ekonomi 2 *</td>
+                <td class="py-2 px-4 border-b border-gray-200">K245</td>
+                <td class="py-2 px-4 border-b border-gray-200">Elvia Fardiana</td>
+                <td class="py-2 px-4 border-b border-gray-200">Kamis, 07:30 - 09:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Perekonomian Indonesia</td>
+                <td class="py-2 px-4 border-b border-gray-200">K256</td>
+                <td class="py-2 px-4 border-b border-gray-200">Kartika Sukmawati</td>
+                <td class="py-2 px-4 border-b border-gray-200">Kamis, 09:30 - 11:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Pengantar Komputer & TI 2C</td>
+                <td class="py-2 px-4 border-b border-gray-200">K246</td>
+                <td class="py-2 px-4 border-b border-gray-200">Murtiwiyati</td>
+                <td class="py-2 px-4 border-b border-gray-200">Jum'at, 07:30 - 09:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Sosiologi & Politik</td>
+                <td class="py-2 px-4 border-b border-gray-200">K131</td>
+                <td class="py-2 px-4 border-b border-gray-200">Ali Muhli</td>
+                <td class="py-2 px-4 border-b border-gray-200">Jum'at, 09:30 - 11:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Pengantar Akuntansi 2A **</td>
+                <td class="py-2 px-4 border-b border-gray-200">K281</td>
+                <td class="py-2 px-4 border-b border-gray-200">Riyanti</td>
+                <td class="py-2 px-4 border-b border-gray-200">Sabtu, 07:30 - 09:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Pengantar Akuntansi 2B **</td>
+                <td class="py-2 px-4 border-b border-gray-200">K281</td>
+                <td class="py-2 px-4 border-b border-gray-200">Riyanti</td>
+                <td class="py-2 px-4 border-b border-gray-200">Sabtu, 09:30 - 11:30</td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="py-2 px-4 border-b border-gray-200">Pendidikan Pancasila *</td>
+                <td class="py-2 px-4 border-b border-gray-200">K133</td>
+                <td class="py-2 px-4 border-b border-gray-200">Ary Natalina</td>
+                <td class="py-2 px-4 border-b border-gray-200">Sabtu, 11:30 - 13:30</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- To-Do List Section -->
+      <section class="bg-white rounded-lg shadow p-6 flex flex-col">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-700 flex items-center">
+          <i class="fas fa-tasks mr-2 text-pink-600"></i> To-Do List
+        </h2>
+        <form id="todo-form" class="flex mb-4">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Masukkan tugas baru..."
+            class="flex-grow border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            required
+          />
+          <button
+            type="submit"
+            class="bg-pink-600 text-white px-4 py-2 rounded-r hover:bg-green-700 transition-colors"
+          >
+            Tambah
+          </button>
+        </form>
+        <ul id="todo-list" class="flex-grow overflow-auto max-h-96 divide-y divide-gray-200">
+          <!-- To-do items will appear here -->
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // To-Do List JavaScript
+    const todoForm = document.getElementById('todo-form');
+    const todoInput = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+
+    function createTodoItem(text) {
+      const li = document.createElement('li');
+      li.className = 'flex items-center justify-between py-2';
+
+      const span = document.createElement('span');
+      span.textContent = text;
+      span.className = 'text-gray-800';
+
+      const btnGroup = document.createElement('div');
+      btnGroup.className = 'flex space-x-2';
+
+      const doneBtn = document.createElement('button');
+      doneBtn.innerHTML = '<i class="fas fa-check"></i>';
+      doneBtn.className = 'text-green-600 hover:text-green-800 transition-colors';
+      doneBtn.title = 'Tandai selesai';
+      doneBtn.addEventListener('click', () => {
+        span.classList.toggle('line-through');
+        span.classList.toggle('text-gray-400');
+      });
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+      deleteBtn.className = 'text-red-600 hover:text-red-800 transition-colors';
+      deleteBtn.title = 'Hapus tugas';
+      deleteBtn.addEventListener('click', () => {
+        li.remove();
+      });
+
+      btnGroup.appendChild(doneBtn);
+      btnGroup.appendChild(deleteBtn);
+
+      li.appendChild(span);
+      li.appendChild(btnGroup);
+
+      return li;
+    }
+
+    todoForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const task = todoInput.value.trim();
+      if (task) {
+        const todoItem = createTodoItem(task);
+        todoList.appendChild(todoItem);
+        todoInput.value = '';
+        todoInput.focus();
+      }
+    });
+  </script>
+</body>
+</html>
